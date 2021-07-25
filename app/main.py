@@ -10,6 +10,7 @@ from flask import Flask, render_template, request
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
 from chatterbot.trainers import ListTrainer
+import os
 
 app = Flask(__name__)
 app.static_folder = 'static'
@@ -110,8 +111,11 @@ conversation = [
 
 trainer.train(conversation)
 
+training_data_personal = open('training_data/simple.txt').read().splitlines()
+
+
 corpus_trainer = ChatterBotCorpusTrainer(bot)
-corpus_trainer.train('chatterbot.corpus.english')
+trainer.train(training_data_personal)
 
 @app.route("/")
 def home():    
