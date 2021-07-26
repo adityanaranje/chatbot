@@ -22,7 +22,7 @@ bot = ChatBot(name='Venom', read_only=True,
                                  {
         'import_path': 'chatterbot.logic.BestMatch',
         'default_response': 'I am sorry, but I do not understand. I am still learning.',
-        'maximum_similarity_threshold': 0.90
+        'maximum_similarity_threshold': 0.98
         }],
                  storage_adapter = "chatterbot.storage.SQLStorageAdapter")
 
