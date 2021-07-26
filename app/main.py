@@ -22,7 +22,7 @@ bot = ChatBot(name='Venom', read_only=True,
                                  {
         'import_path': 'chatterbot.logic.BestMatch',
         'default_response': 'I am sorry, but I do not understand. I am still learning.',
-        'maximum_similarity_threshold': 1.00
+        'maximum_similarity_threshold': 0.99
         }],
                  storage_adapter = "chatterbot.storage.SQLStorageAdapter")
 
@@ -95,8 +95,10 @@ trainer.train(["hello siri","Not Siri. Venom here","Did you know siri","No"])
 trainer.train(["hello alexa","Not Alexa. Venom here","Did you know alexa?","Yeh. She was my student. I taught her how to talk to people."])
 trainer.train(["Hello Siri","Not Siri. Venom here","Did you know Siri","No"])
 trainer.train(["Hello Alexa","Not Alexa. Venom here","Did you know Alexa?","Yeh. She was my student. I taught her how to talk to people."])
-
-
+trainer.train(["Good morning","Good morning"])
+trainer.train(["Good afternoon","Good afternoon"])
+trainer.train(["Good evening","Good evening"])
+trainer.train(["Good night","Good night"])
 
 
 conversation = [
